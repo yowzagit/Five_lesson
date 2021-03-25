@@ -3,6 +3,7 @@ package pageobject;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
+
 import java.util.Locale;
 
 import static com.codeborne.selenide.Condition.text;
@@ -13,11 +14,11 @@ import static com.codeborne.selenide.Selenide.open;
 public class StudentRegistrationFormPage {
     Faker faker = new Faker();
     FakeValuesService fakeValuesService = new FakeValuesService(new Locale("in-ID"), new RandomService());
-//присвоение имён
+    //присвоение имён
     String siteName = "https://demoqa.com/automation-practice-form",
             firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
-            email = faker.internet().emailAddress(),
+            email = fakeValuesService.bothify("????##@gmail.com"),
             sex = "Male",
             number = faker.number().digits(10),
             birthMonth = "June",
@@ -35,7 +36,7 @@ public class StudentRegistrationFormPage {
     }
 
     public StudentRegistrationFormPage fillForm() {
-//вписываем значения
+    //вписываем значения
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(email);
@@ -59,8 +60,8 @@ public class StudentRegistrationFormPage {
         return this;
     }
 
-    public StudentRegistrationFormPage checkData() {
-//проверка
+    public void checkData() {
+    //проверка
         $(".table").shouldHave(text(firstName),
                 text(lastName),
                 text(email),
@@ -77,7 +78,6 @@ public class StudentRegistrationFormPage {
 
         $("#closeLargeModal").click();
 
-        return this;
     }
 
 }
