@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class StudentRegistrationFormPage {
+public class studentRegistrationFormPage {
     Faker faker = new Faker();
     FakeValuesService fakeValuesService = new FakeValuesService(new Locale("in-ID"), new RandomService());
     //присвоение имён
@@ -29,13 +29,13 @@ public class StudentRegistrationFormPage {
             state = "NCR",
             city = "Delhi";
 
-    public StudentRegistrationFormPage openPage() {
+    public studentRegistrationFormPage openPage() {
         open(siteName);
 
         return this;
     }
 
-    public StudentRegistrationFormPage fillForm() {
+    public studentRegistrationFormPage fillForm() {
     //вписываем значения
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);

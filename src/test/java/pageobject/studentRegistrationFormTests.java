@@ -4,9 +4,9 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-public class StudentRegistrationFormTests {
+public class studentRegistrationFormTests {
 
-    StudentRegistrationFormPage studentRegistrationFormPage = new StudentRegistrationFormPage();
+    pageobject.studentRegistrationFormPage studentRegistrationForm = new studentRegistrationFormPage();
 
     @BeforeAll
     static void setup() {
@@ -15,7 +15,7 @@ public class StudentRegistrationFormTests {
 
     @Test
     void successfulFillFormTest() {
-        studentRegistrationFormPage
+        studentRegistrationForm
                 .openPage()
                 .fillForm()
                 .checkData();
