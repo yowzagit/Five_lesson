@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class StudentRegistrationFormTests {
 
-    StudentRegistrationFormPage studentRegistrationForm = new StudentRegistrationFormPage();
+    studentRegistrationFormPage studentRegistrationForm = new studentRegistrationFormPage();
 
     @BeforeAll
     static void setup() {
