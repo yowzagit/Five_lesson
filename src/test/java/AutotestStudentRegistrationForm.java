@@ -46,7 +46,6 @@ public class AutotestStudentRegistrationForm {
         $(".react-datepicker__year-select").selectOption(birthYear);
         $(".react-datepicker__day.react-datepicker__day--013").click();
 
-
         $("#subjectsInput").val("ma");
         $(byText(subjects)).click();
 
