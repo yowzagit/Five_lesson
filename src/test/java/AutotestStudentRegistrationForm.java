@@ -74,7 +74,7 @@ public class AutotestStudentRegistrationForm {
                 text(address),
                 text("per.png"),
                 text(state),
-                text(city));
+                  text(city));
 
         $("#closeLargeModal").click();
 
